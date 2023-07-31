@@ -1,0 +1,10 @@
+input{
+    border: 1px solid rgba(128, 128, 128, 0.471);
+    padding:6px 20px;
+    margin-bottom:10px ;
+    border-radius: 2px;
+    width: 250px;
+}
+input.ng-touched.ng-invalid{
+    border:1px solid red;
+}

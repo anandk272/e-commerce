@@ -1,0 +1,15 @@
+<div class="max-w-xs flex flex-col h-full justify-between">
+    
+    <img class="w-full h-52 object-contain" src={{item.image}} alt="" (click)="goToItem(item.id)">
+    <h3 class="desc break-all" (click)="goToItem(item.id)" >{{item.title}}</h3>
+    
+    <div class="flex items-center">
+        <!-- <h2 class="pr-1">&#8377; {{item.price-item.offer*item.price/100}}</h2>
+        <p class="dec text-gray-400 line-through" [ngClass]="item?item.offer>0?'':'offer':null" >{{item.price}}</p>
+        <h2 class=" font-thin pl-1" appCustomStyle [ngClass]="item.offer>0?'':'offer'" >-{{item.offer}}%</h2> -->
+        <h2 class="pr-1">&#8377; {{item.price}}</h2>
+        <p>{{item.rating.rate}}</p>
+    </div>
+    <app-button class="self-center w-full " content="AddToCart" (click)="addToCart(item)"></app-button>
+    
+</div>

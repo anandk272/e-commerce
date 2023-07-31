@@ -1,0 +1,14 @@
+<form class="bg-white py-6 px-20 border-slate-400 border flex flex-col items-center" [formGroup]="reactiveForm" (ngSubmit)="handleSignin()">
+    
+    <input type="text" placeholder="username" formControlName="username" >
+    <p *ngIf="reactiveForm.get('username').errors?.['required'] && !reactiveForm.controls['username'].untouched" class="text-red-600">username is required</p>
+    <p *ngIf="reactiveForm.get('username').errors?.['noSpaceAllowed'] && !reactiveForm.controls['username'].untouched" class="text-red-600">whitespace is not allowed</p>
+  
+    <input type="password" placeholder="password" formControlName="password" >
+    <input type="email" formControlName="email" >
+    <p *ngIf="reactiveForm.get('email').errors?.['emailNotAllowed']" class="text-red-600">this mail id is restricted</p>
+    <p *ngIf="reactiveForm.get('email').invalid && !reactiveForm.controls['email'].untouched" class="text-red-600">email is invalid</p>
+   
+    <button type="submit">login</button>
+</form>
+

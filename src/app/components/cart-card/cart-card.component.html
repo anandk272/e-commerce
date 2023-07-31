@@ -1,0 +1,29 @@
+
+
+    <div class="flex w-full h-28 p-2 justify-between">
+        <div class="left h-full flex">
+            <img class="h-full w-16 object-contain mr-2" src={{data.image}} alt="" loading="lazy">
+            <div class="flex flex-col justify-center">
+                <h3 >{{data.title }}</h3>
+    
+                <h2>{{data.price | currency:'INR'}}</h2>
+        
+            </div>
+        </div>
+        
+        <div class="right flex items-center w-56 justify-between">
+            <div>
+
+            </div>
+            <button (click)="handleDelete()"><mat-icon>delete</mat-icon></button>
+            <div class="flex items-center justify-between border rounded-sm p-0.5">
+                <button (click)="incrementCount()" class="border-r px-2">+</button>
+                <h3 class="px-2">{{data.count}} </h3>
+                <button (click)="decrementCount()" class="border-l px-2">-</button>
+            </div>
+           
+            <h2>{{data.price*data.count | currency:'INR'}}</h2>
+        </div>
+    </div>
+    
+    

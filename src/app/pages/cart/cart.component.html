@@ -1,0 +1,18 @@
+<div class="flex m-8  pt-14">
+<div class="w-full mr-8">
+    <div *ngIf="totItems===0">
+        <h3>Your Cart is empty</h3>
+    </div>
+    <app-cart-card *ngFor="let item of cartItems" [data]="item" ></app-cart-card>
+    
+    
+
+</div>
+<div *ngIf="totItems>0" class=" px-8 py-8 h-full shadow-lg rounded-md w-72 flex flex-col">
+    <div class="flex justify-between"><h3>Total Items</h3> <h3>{{totItems}}</h3></div>
+    <div class="flex justify-between mb-12"><h3>Total price</h3> <h3>{{totPrice | currency:'INR'}}</h3></div>
+    <app-button class="self-center" content="Checkout"></app-button>
+</div>
+
+
+</div>

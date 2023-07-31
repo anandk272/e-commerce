@@ -1,0 +1,19 @@
+<div class="flex h-14 w-full justify-between bg-black p-3 fixed top-0">
+    <a class="left h-full flex items-center " routerLink="/">
+        <img class="h-full " src="https://pngimg.com/uploads/amazon/amazon_PNG11.png">
+    </a>
+    <div class="flex w-full justify-center border-">
+        <input type="text" class="w-1/3 outline-none px-3 py-2 rounded-l-sm " [(ngModel)]="searchText" (input)="handleSearch()">
+        <button class="bg-yellow-500 px-3 py-1 rounded-r-sm" (click)="handleSearch()">
+            <mat-icon class="">search</mat-icon>
+        </button>
+    </div>
+    <div class="right flex h-full items-center ">
+        <p [ngStyle]="{display:isLoggedIn?'none':'unset'}" class="text-white pr-2" (click)="handleClick()">Login </p>
+        <p class="text-yellow-600 " [ngStyle]="{color:_cartCount===0?'white':null}">{{_cartCount}}</p>
+        <a routerLink="/cart"><mat-icon class="text-white" >shopping_cart</mat-icon></a>
+        
+    </div>
+
+    <app-signin-popup ngDefaultControl [(loginDetails)]="loginDetails"   class="absolute right-4 top-12" [ngStyle]="{display:isClicked?'unset':'none'}"></app-signin-popup>
+</div>

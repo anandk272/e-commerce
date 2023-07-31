@@ -1,0 +1,15 @@
+<div class="wrap flex justify-center w-full h-screen items-center">
+    <div class=" w-1/3 shadow-md px-8 py-8 rounded-md" >
+        <h2 class="text-center">LogIn</h2>
+        <form class="flex flex-col items-center" [formGroup]="reactiveForm">
+            
+           
+                
+            <input type="text" placeholder="username" formControlName="username">
+            <input type="password" placeholder="password" formControlName="password">
+            
+            
+            <button type="submit"  class="bg-yellow-500 py-2 px-10 rounded-sm mt-8" (click)="handleSignin()"  >LogIn</button>   
+        </form>
+    </div>
+</div>
